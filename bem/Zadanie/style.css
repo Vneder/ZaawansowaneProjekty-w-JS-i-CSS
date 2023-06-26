@@ -1,0 +1,61 @@
+.page {}
+
+.header {}
+
+.page__header {}
+
+.header__title {}
+
+.header__title--big {}
+
+.header__title--small {}
+
+.button {}
+
+.header__button {}
+
+.navbar {}
+
+.page__navbar {}
+
+.navbar__logo {}
+
+.navbar__image-logo {}
+
+.navbar__logo-title {}
+
+.navbar__links {}
+
+.navbar__item {}
+
+.navbar__link {}
+
+.navbar__link--disabled {}
+
+.search-bar {}
+
+.page__search-bar {}
+
+.search-bar__input {}
+
+.articles {}
+
+.page__articles {}
+
+.articles__article {}
+
+.article__title {}
+
+.article__date {}
+
+.article__author {}
+
+.article__content {}
+
+.article__middle-title {}
+
+.footer {}
+
+.footer__copyright {}
+
+.footer__address {}

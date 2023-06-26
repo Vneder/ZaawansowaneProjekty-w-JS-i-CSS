@@ -1,0 +1,21 @@
+$bg-main-color: #252525;
+
+body {
+  margin: 0;
+}
+
+header {
+  display: flex;
+  background-color: $bg-main-color;
+  height: 300px;
+  h1 {
+    font-size: 40px;
+    color: white;
+    strong {
+      color: red;
+    }
+  }
+  h2 {
+    font-size: 32px;
+  }
+}
