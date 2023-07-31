@@ -30,7 +30,7 @@ html {
 
 .logo {
   flex-basis: 200px;
-  background-color: cadetblue;
+
   &__image {
     width: 100%;
     display: block;
@@ -41,12 +41,19 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 799px) {
+    flex-basis: 100%;
+    order: -1;
+  }
+
   &__input {
     flex-basis: 60%;
     height: 50%;
     margin-right: 2vh;
     padding: 0 10px;
     font-size: 1.4rem;
+    min-height: 40px;
     max-height: 60px;
     &:focus {
       box-shadow: 0 0 4px 1px $main-color;
@@ -61,6 +68,7 @@ html {
     text-transform: uppercase;
     letter-spacing: 2px;
     transition: 0.4s;
+    min-height: 40px;
     max-height: 60px;
     &:hover {
       cursor: pointer;
@@ -73,6 +81,12 @@ html {
   display: flex;
   padding: 0 30px 0 50px;
   align-items: center;
+
+  @media (max-width: 799px) {
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
+
   &__icon-link {
     margin: 0 5px;
     font-size: 3rem;
@@ -184,6 +198,9 @@ html {
   }
   .article {
     flex-basis: 50%;
+    @media (max-width: 799px) {
+      flex-basis: 100%;
+    }
   }
 }
 .article-list {
@@ -193,9 +210,42 @@ html {
   justify-content: space-around;
   &__article {
     flex-basis: 30%;
-    // flex-grow: 1;
+    @media (max-width: 1023px) {
+      flex-basis: 45%;
+    }
+    @media (max-width: 799px) {
+      flex-basis: 90%;
+    }
   }
 }
 .footer {
   flex-basis: 100%;
+  background-color: $main-color;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px 0;
+  color: #fff;
+
+  .sm-links {
+    flex-basis: 30%;
+  }
+}
+
+.sm-links {
+  font-family: $special-font;
+
+  &--darken {
+    background-color: darken($main-color, 25%);
+  }
+
+  &__title {
+    margin: 20px 0 40px;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+  &__item {
+    text-indent: 40px;
+    font-size: 1.8rem;
+  }
 }
