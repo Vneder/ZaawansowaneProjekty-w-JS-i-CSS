@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  font-family: arial;
+  background-color: #333;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(120px, 200px) minmax(240px, 1fr) 80px;
+  grid-template-rows: auto 1fr auto auto;
+  grid-template-areas: "logo search menu" "gall gall gall" "cont cont cont" "foot foot foot";
+  min-height: 100vh;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: minman(300px, auto) 1fr;
+    grid-template-rows: auto auto auto 1fr auto auto;
+    grid-template-areas: "logo gall" "menu gall" "search gall" ". gall" "cont gall" "foot foot";
+  }
+}
+
+.logo {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  background-color: brown;
+  height: 100px;
+}
+@media (min-width: 1024px) {
+  .logo {
+    grid-area: logo;
+  }
+}
+
+.search {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  background-color: blue;
+}
+@media (min-width: 1024px) {
+  .search {
+    grid-area: search;
+  }
+}
+
+.menu {
+  grid-column: -1/-2;
+  grid-row: 1;
+  background-color: yellow;
+}
+@media (min-width: 1024px) {
+  .menu {
+    grid-area: menu;
+  }
+}
+
+.gallery {
+  grid-column: 1/-1;
+  grid-row: 2;
+  background-color: lightblue;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
+  gap: 15px;
+  padding: 120px 15px 15px 15px;
+  position: relative;
+}
+.gallery img {
+  width: 100%;
+}
+.gallery h1 {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+@media (min-width: 1024px) {
+  .gallery {
+    grid-area: gall;
+  }
+}
+
+.contact {
+  background-color: green;
+  grid-area: 3/1/4/-1;
+  height: 60px;
+}
+@media (min-width: 1024px) {
+  .contact {
+    grid-area: cont;
+  }
+}
+
+.footer {
+  background-color: red;
+  grid-area: foot;
+  height: 100px;
+}/*# sourceMappingURL=style.css.map */
