@@ -1,46 +1,20 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const rootElement = document.querySelector('.root');
-    const sections = document.querySelectorAll('section');
-    let currentSectionIndex = 0;
-    let isThrottled = false;
 
-    document.addEventListener('wheel', function (e) {
-        if (isThrottled) return;
-        isThrottled = true;
+    const scroller = new Scroller('.root');
 
-        setTimeout(function () {
-            isThrottled = false;
-        }, 1000);
-
-        const direction = e.deltaY < 0 ? 1 : -1;
-
-        scroll(direction);
-    });
-
-    function scroll(direction) {
-        if (direction === 1) {
-            const isLastSection = currentSectionIndex === sections.length - 1;
-            if (isLastSection) {
+    document.addEventListener('wheel', (e) => scroller.listenScroll(e));
+    document.addEventListener('swipeUp', (e) => scroller.scroll(1));
+    document.addEventListener('swipeDown', (e) => scroller.scroll(-1));
+    document.addEventListener('keydown', (e) => {
+        switch (e.keyCode) {
+            case 40:
+                return scroller.scroll(1);
+            case 38:
+                return scroller.scroll(-1);
+            default:
                 return;
-            }
+
+
         }
-        else if (direction === -1) {
-            const isFirstSection = currentSectionIndex === 0;
-            if (isFirstSection) {
-                return;
-            }
-        }
-
-        currentSectionIndex = currentSectionIndex + direction;
-
-        scrollToCurrentSection();
-    }
-
-    function scrollToCurrentSection() {
-        sections[currentSectionIndex].scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
-    }
-
+    })
 }) 

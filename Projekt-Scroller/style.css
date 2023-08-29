@@ -6,6 +6,10 @@ html {
     overflow: hidden;
 }
 
+body {
+    background-color: #888;
+}
+
 section {
     height: 100vh;
     text-align: center;
@@ -16,4 +20,8 @@ section {
 section p {
     max-width: 75%;
     margin: 16px auto;
+}
+
+img {
+    max-width: 100%;
 }
